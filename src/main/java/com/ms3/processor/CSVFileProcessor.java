@@ -31,10 +31,14 @@ public class CSVFileProcessor
 			System.setProperty("logfilename", fileName);//This passes the custom name for the .log file
 			Logger logger = LogManager.getLogger(CSVFileProcessor.class);
 			FileDataProcessor fileDataProcessor = new FileDataProcessor();
+			
 			HashMap<String, Object> processedResults=fileDataProcessor.processFile(file);
 			List<String[]> goodRecords = (List<String[]>) processedResults.get("goodRecords");
 			List<String[]> badRecords = (List<String[]>) processedResults.get("badRecords");
 			List<String> headers = (List<String>) processedResults.get("headers");
+			
+			try
+			{
 			writeValidRecordsToDb(goodRecords,fileName);
 			writeBadRecordsToFile(badRecords,fileName);
 			
@@ -42,7 +46,13 @@ public class CSVFileProcessor
 			logger.info("Total number of records in input fle - " + (goodRecords.size() + badRecords.size()));
 			logger.info("Total number of Good Records - " + goodRecords.size());
 			logger.info("Total number of Bad Records - " + badRecords.size());
-				
+			}
+			catch (IOException e) 
+	    	{ 
+	        	logger.fatal("Exception Occured: Unable to open file.", e);
+	            e.printStackTrace(); 
+	        } 
+			
 		}
 		
 		public static void writeValidRecordsToDb(List<String[]> goodRecords,String dbName)
@@ -57,14 +67,12 @@ public class CSVFileProcessor
 		}
 		
 		
-		public static void writeBadRecordsToFile(List<String[]> badRecords, String fileName)
+		public static void writeBadRecordsToFile(List<String[]> badRecords, String fileName) throws IOException
 		{
 			//Writing all the failed records into -bad.csv file
 			Path path = Paths.get("src/main/resources/files/output/"+fileName+"-bad.csv"); 
 		  
-		    
-		    try 
-		    { 		//deleteIfExists File 
+			//deleteIfExists File 
 		    		Files.deleteIfExists(path); 
 					File badrowsfile = new File("src/main/resources/files/output/"+fileName+"-bad.csv");
 					badrowsfile.createNewFile();
@@ -93,11 +101,9 @@ public class CSVFileProcessor
 				      }
 				      
 				     bw.close();
-		        } 
-		        catch (IOException e) 
-		    	{ 
-		            e.printStackTrace(); 
-		        } 
-		}
+				     System.out.println("Error records file created: \t"+fileName+"-bad.csv\n");
+		} 
+				
 }
+
 

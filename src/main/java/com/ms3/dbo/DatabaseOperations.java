@@ -37,9 +37,10 @@ public class DatabaseOperations
 		} 
 		catch (SQLException e) 
 		{
-			logger.error("Error occured during Table creation"+e);
+			logger.debug("Error occured during Table creation"+e);
 			e.printStackTrace();
 		}
+		System.out.println("Created a table in the Database.\n");
 		return c;
 	}
 	
@@ -79,7 +80,9 @@ public class DatabaseOperations
 		}
 		catch (SQLException e) 
 		{
+			logger.debug("Error occured during insertion into the database"+e);
 			e.printStackTrace();
 		}
+		System.out.println("Insertion of records into Database is complete.");
 	}
 }

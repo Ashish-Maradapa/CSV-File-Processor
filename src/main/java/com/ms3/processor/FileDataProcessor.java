@@ -74,7 +74,7 @@ public class FileDataProcessor
 		result.put("goodRecords", goodRecords);
 		result.put("badRecords", badRecords);
 		result.put("headers", headers);
-	 
+		System.out.println("Splitting the input file into good and bad data done.\n");
 		return result;
 	}
 	
@@ -82,10 +82,8 @@ public class FileDataProcessor
 	public boolean isBadData(String[] line)
 	{	
 		//Checking for bad records
-		//System.out.println(line.length);
 		for(String s: line) 
 		{
-			//System.out.println(s);
 			if(s.isBlank()) 
 			{
 				return true;

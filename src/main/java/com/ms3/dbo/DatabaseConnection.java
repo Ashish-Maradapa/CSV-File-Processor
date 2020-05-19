@@ -28,7 +28,7 @@ public class DatabaseConnection {
 			Class.forName("org.sqlite.JDBC");
 	        c = DriverManager.getConnection(Db_name);
 	        c.setAutoCommit(false);
-	        System.out.println("Opened database successfully");
+	        System.out.println("Opened and connected to database successfully.");
 	       
 		}
 		catch(SQLException e)
