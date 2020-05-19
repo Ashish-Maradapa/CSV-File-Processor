@@ -49,7 +49,7 @@ public class CSVFileProcessor
 			}
 			catch (IOException e) 
 	    	{ 
-	        	logger.fatal("Exception Occured: Unable to open file.", e);
+	        	logger.debug("Exception Occured: Unable to open file.", e);
 	            e.printStackTrace(); 
 	        } 
 			

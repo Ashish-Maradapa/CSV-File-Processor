@@ -69,6 +69,7 @@ public class FileDataProcessor
 		}
 		catch (IOException e)
 		{
+			logger.debug("Exception Occured: Unable to open file during splitting records: ", e);
 			e.printStackTrace();
 		}
 		result.put("goodRecords", goodRecords);

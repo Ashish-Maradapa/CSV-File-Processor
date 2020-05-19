@@ -33,10 +33,11 @@ public class DatabaseConnection {
 		}
 		catch(SQLException e)
 		{
-			logger.error("Unable to connect to the Database"+e);
+			logger.debug("Unable to connect to the Database\t"+e);
 		} 
 		catch (ClassNotFoundException e)
-		{
+		{	
+			logger.debug("SQLite driver class not found \t"+e);
 			e.printStackTrace();
 		} 
         return c;
