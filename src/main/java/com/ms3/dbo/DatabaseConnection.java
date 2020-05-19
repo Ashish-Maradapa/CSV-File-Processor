@@ -3,7 +3,8 @@ package com.ms3.dbo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 /*
@@ -13,7 +14,7 @@ import org.apache.log4j.Logger;
 
 public class DatabaseConnection {
 	
-	public static final Logger logger = Logger.getLogger(DatabaseConnection.class);
+	public static final Logger logger = LogManager.getLogger(DatabaseConnection.class);
 	
 	public Connection conn(String dbname)
 	{	//This method establishes connection and creates an SQLite database

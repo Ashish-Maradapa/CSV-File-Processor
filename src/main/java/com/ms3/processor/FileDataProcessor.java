@@ -9,14 +9,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 
 public class FileDataProcessor 
 {	
-	//This class contains methods that seperate the input file into into good and bad records 
-	public static final Logger logger = Logger.getLogger(FileDataProcessor.class);
+	//This class contains methods that separate the input file into into good and bad records 
+	public static final Logger logger = LogManager.getLogger(FileDataProcessor.class);
 	public HashMap<String, Object>  processFile(File file) 
 	{
 		String line = "";
@@ -44,7 +45,7 @@ public class FileDataProcessor
 			//Here we are extracting all records into our two lists 
 			while((line = br.readLine()) != null)
 			{
-				System.out.println(line);
+				//System.out.println(line);
 				if(!(header.equals(line) || line.isBlank()))
 				{
 					String[] Newline = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
@@ -81,10 +82,10 @@ public class FileDataProcessor
 	public boolean isBadData(String[] line)
 	{	
 		//Checking for bad records
-		System.out.println(line.length);
+		//System.out.println(line.length);
 		for(String s: line) 
 		{
-			System.out.println(s);
+			//System.out.println(s);
 			if(s.isBlank()) 
 			{
 				return true;

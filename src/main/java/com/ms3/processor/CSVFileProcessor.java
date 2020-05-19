@@ -12,7 +12,8 @@ import java.sql.Connection;
 import java.util.HashMap;
 
 import org.apache.commons.io.FilenameUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import com.ms3.dbo.DatabaseConnection;
 import com.ms3.dbo.DatabaseOperations;
@@ -28,7 +29,7 @@ public class CSVFileProcessor
 			fileName = FilenameUtils.removeExtension(file.getName());//File name is retrieved here.	
 			
 			System.setProperty("logfilename", fileName);//This passes the custom name for the .log file
-			Logger logger = Logger.getLogger(CSVFileProcessor.class);
+			Logger logger = LogManager.getLogger(CSVFileProcessor.class);
 			FileDataProcessor fileDataProcessor = new FileDataProcessor();
 			HashMap<String, Object> processedResults=fileDataProcessor.processFile(file);
 			List<String[]> goodRecords = (List<String[]>) processedResults.get("goodRecords");

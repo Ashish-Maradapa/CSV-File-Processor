@@ -5,13 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class DatabaseOperations 
 {
 	
-	public static final Logger logger = Logger.getLogger(DatabaseOperations.class);
+	public static final Logger logger = LogManager.getLogger(DatabaseOperations.class);
 	
 	public Connection createSqliteTable(Connection c)
 	//This method creates the table with required attributes
