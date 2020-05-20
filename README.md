@@ -10,11 +10,17 @@ format are being inserted into a custom database and the other records are being
 
 Steps to get this application to run:
 
-	1. Start the program from CSVFileProcessor.java file in the dbo package. This has the main method of the application. 
-	2. Make sure there are no databases with the name <input-file-name>.db or <input-file-name>-bad.csv in the project folder.
-	3. The applictation is going to create 3 new files(1 database file, 1 csv file, 1 log file) so it needs some available memory depending on the input file.
-	4. If you are running the application with a different input file the table name has to be changed or it has to be in the same format as the first file. In other case there will be an error in the database as the database and the table are already present. he database will be appended with data for every re run.
-	5. I have used DB.Browser.for.SQLite-3.11.2 to view the database. (https://download.sqlitebrowser.org/DB.Browser.for.SQLite-3.11.2-win64.zip)
+	1. Start the program from CSVFileProcessor.java file in the dbo package. This has the main 
+	method of the application. 
+	2. Make sure there are no databases with the name <input-file-name>.db or 
+	<input-file-name>-bad.csv in the project folder.
+	3. The applictation is going to create 3 new files(1 database file, 1 csv file, 1 log file)
+	so it needs some available memory depending on the input file.
+	4. If you are running the application with a different input file the table name has to be changed or
+	it has to be in the same format as the first file. In other case there will be an error in the database
+	as the database and the table are already present. he database will be appended with data for every re run.
+	5. I have used DB.Browser.for.SQLite-3.11.2 to view the database.
+	(https://download.sqlitebrowser.org/DB.Browser.for.SQLite-3.11.2-win64.zip)
 	6.The application receives the input file from "/src/main/resources/input/ms3Interview.csv".
 	7. The output files and log files are named according to the instructions.
 
