@@ -23,6 +23,8 @@
 .classpath
 .project
 .settings/
+bin/
+
 
 # Maven
 log/
