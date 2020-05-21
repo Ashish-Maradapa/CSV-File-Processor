@@ -40,6 +40,9 @@ Steps to get this application to run:
 	- The columns H and I are storing only boolean data(But i didnt want to change the 
 	  input data so i stored them as VARCHAR)
  	- The bad csv data file is being deleted and created everytime the application is run. 
+	- Input file is being taken from the resources folder. 
+	- A 'candidates' table is being generated in the database for every run and assumes that the order of the
+	  the input csv file is the same. 
 
 
 -- Design Choices:
