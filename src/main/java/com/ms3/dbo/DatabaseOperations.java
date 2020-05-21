@@ -8,6 +8,11 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+
+/*
+ * Author: Ashish Maradapa
+ * This class contains methods to create table in the database and data insertion are present here.
+ */
 public class DatabaseOperations 
 {
 	

@@ -13,10 +13,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-
+/*
+ * Author: Ashish Maradapa
+ * This class contains methods that separate the input file into into good and bad records.
+ */
 public class FileDataProcessor 
 {	
-	//This class contains methods that separate the input file into into good and bad records 
+	
 	public static final Logger logger = LogManager.getLogger(FileDataProcessor.class);
 	public HashMap<String, Object>  processFile(File file) 
 	{

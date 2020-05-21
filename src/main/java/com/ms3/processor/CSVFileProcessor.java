@@ -18,6 +18,13 @@ import org.apache.logging.log4j.Logger;
 import com.ms3.dbo.DatabaseConnection;
 import com.ms3.dbo.DatabaseOperations;
 
+/*
+ * Author: Ashish Maradapa
+ * This is the main class for the application.
+ * The separated list is received here and are written to CSV file and the Database in this class 
+ */
+
+
 public class CSVFileProcessor 
 	{
 		
